@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="personMapper">
+
+    <resultMap id="personMap" type="com.xiachao.pojo.Person">
+        <id column="personId" property="personId"></id>
+        <result column="personName" property="personName"></result>
+        <result column="birthday" property="birthday"></result>
+
+        <!--配置集合信息-->
+        <collection property="orderList" ofType="com.xiachao.pojo.Order">
+            <id column="orderId" property="orderId"></id>
+            <result column="orderTime" property="orderTime"></result>
+            <result column="total" property="total"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="personMap">
+        select * from person p,orders o where p.personId=o.personId;
+    </select>
+
+</mapper>

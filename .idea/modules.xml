@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mybatis.iml" filepath="$PROJECT_DIR$/.idea/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-SQL-Condition/mybatis-SQL-Condition.iml" filepath="$PROJECT_DIR$/mybatis-SQL-Condition/mybatis-SQL-Condition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-anno/mybatis-anno.iml" filepath="$PROJECT_DIR$/mybatis-anno/mybatis-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-multTables/mybatis-multTables.iml" filepath="$PROJECT_DIR$/mybatis-multTables/mybatis-multTables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-quick/mybatis-quick.iml" filepath="$PROJECT_DIR$/mybatis-quick/mybatis-quick.iml" />
+    </modules>
+  </component>
+</project>

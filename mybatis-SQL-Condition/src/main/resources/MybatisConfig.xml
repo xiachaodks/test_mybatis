@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--引入外部数据库配置文件-->
+    <properties resource="jdbc.properties"></properties>
+
+    <!--配置别名-->
+    <typeAliases>
+        <typeAlias type="com.xiachao.pojo.User" alias="user"/>
+        <typeAlias type="java.lang.Integer" alias="int"/>
+        <typeAlias type="java.lang.String" alias="string"/>
+    </typeAliases>
+
+    <!--配置分页插件参数-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
+    <environments default="datasource">
+        <environment id="datasource">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 引入mapper文件 -->
+    <mappers>
+        <mapper resource="com/xiachao/mapper/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>

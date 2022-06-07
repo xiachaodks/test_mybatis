@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+
+    <select id="findAll" resultType="com.xiachao.pojo.User">
+        select * from user
+    </select>
+
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.xiachao.pojo.User">
+        select * from user where userId = #{userId}
+    </select>
+
+    <insert id="insertUser" parameterType="com.xiachao.pojo.User">
+        insert into user value(#{userId},#{userName},#{gender},#{age})
+    </insert>
+
+
+    <update id="updateUser" parameterType="com.xiachao.pojo.User">
+        update user set userName = #{userName} ,gender = #{gender},age = #{age}
+        where userId = #{userId}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete from user where userName = #{userName}
+    </delete>
+</mapper>
